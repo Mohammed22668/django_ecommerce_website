@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+  <div class="overlay">
+    <!-- LOGN IN FORM  -->
+    <form method="post">
+       {% csrf_token %}
+       <!--   con = Container  for items in the form-->
+       <div class="con">
+       <!--     Start  header Content  -->
+       <header class="head-form">
+          <h2>Log In</h2>
+          <!--     A welcome message or an explanation of the login form -->
+          <p>login here using your username and password</p>
+       </header>
+       <!--     End  header Content  -->
+       <div class="field-set">
+          <!--   user name -->
+          
+             
+          <div class="form-control">
+            <input type="text" name="username" required>
+            <label>User Name</label>
+       
+          </div>
+              <!-- password -->
+          <div class="form-control">
+            <input type="password" type="password"  id="pwd"  name="password" required>
+            <label>Password </label> 
+             <!--Show/hide password  -->
+            <i class="fa fa-eye" aria-hidden="true"  type="button" id="eye"></i>   
+          </div>
+          <!-- buttons -->
+          <!-- button LogIn -->
+          <button class="log-in" type="submit" value="enter"> Log In </button>
+           
+       </div>
+        <!--other buttons -->
+      
+       <!--   End Conrainer  -->
+      </div>
+       <!-- End Form -->
+    </form>
+    </div>  
+    <script src="{% static 'js/login_js.js' %}"></script>
+</body>
+</html>

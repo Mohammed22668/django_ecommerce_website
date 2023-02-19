@@ -17,7 +17,13 @@ class Product(models.Model):
     price = models.FloatField()
     digital = models.BooleanField(default=False)
     img = models.ImageField(upload_to='products/%y/',null=True,blank=True)
-    
+    # Inventory / Out of stock / In stock
+    # Type / physical
+    # Categories
+    # tag
+    # Description 
+    # colors 
+    # show 
     
     @property
     def imageUrl(self):
@@ -69,6 +75,9 @@ class OrderItem(models.Model):
     order = models.ForeignKey('Order',null=True, on_delete=models.SET_NULL)     
     quantity = models.IntegerField(default=0,null=True,blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return str(self.product)
     
     @property
     def get_total(self):
